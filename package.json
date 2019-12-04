@@ -1,0 +1,41 @@
+{
+  "name": "to-do-app",
+  "version": "1.0.0",
+  "description": "To do application",
+  "main": "src/server/index.js",
+  "scripts": {
+    "client": "webpack-dev-server --config webpack.dev.js --open",
+    "server": "nodemon src/server/index.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "webpack --config webpack.prod.js && node src/server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apyd/To-do-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/apyd/To-do-app/issues"
+  },
+  "homepage": "https://github.com/apyd/To-do-app#readme",
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
+    "@babel/polyfill": "^7.7.0",
+    "@babel/preset-env": "^7.7.4",
+    "babel-loader": "^8.0.6",
+    "concurrently": "^5.0.0",
+    "css-loader": "^3.2.1",
+    "html-webpack-plugin": "^3.2.0",
+    "nodemon": "^2.0.1",
+    "style-loader": "^1.0.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  },
+  "dependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "webpack-merge": "^4.2.2"
+  }
+}
