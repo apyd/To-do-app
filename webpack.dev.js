@@ -10,7 +10,9 @@ module.exports = merge(common, {
     },
     devServer: {
         port: 3000,
+        hot: true,
         open: true,
+        liveReload: true,
         proxy: {
             "/api": "http://localhost:8080"
         }
