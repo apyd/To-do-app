@@ -1,9 +1,11 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
 
 module.exports = {
-    entry: ['@babel/polyfill', './src/client/index.js'],
+    entry: ['@babel/polyfill', './src/client/app.js'],
     module: {
-        rules: [{
+        rules: [
+            {
                 test: /\.js$/,
                 exclude: /node_modules/,
                 use: {
@@ -17,11 +19,16 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: ["style-loader", "css-loader"]
-            }
+            },
+            {
+                test: /\.pug$/,
+                use: ['html-loader?attrs=false', 'pug-html-loader']
+              }
         ]
     },
     plugins: [new HtmlWebpackPlugin({
-        template: "./public/index.html",
-        favicon: "./public/favicon.ico"
+        filename: 'index.html',
+        template: path.resolve('./src/server/templates/', 'index.pug'),
+        inject: false
     })],
 }
