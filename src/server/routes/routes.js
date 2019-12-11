@@ -12,7 +12,7 @@ router.get('/', async (req, res) => {
 
 router.get('/login', async (req, res) => {
     try {
-        res.sender('login');
+        res.render('login');
     } catch(err) {
         console.log(err.message);
     }
@@ -20,7 +20,7 @@ router.get('/login', async (req, res) => {
 
 router.get('/register', async (req, res) => {
     try {
-        res.sender('register');
+        res.render('register');
     } catch(err) {
         console.log(err.message);
     }

@@ -30,5 +30,16 @@ module.exports = {
         filename: 'index.html',
         template: path.resolve('./src/server/templates/', 'index.pug'),
         inject: false
-    })],
+    }),
+    new HtmlWebpackPlugin({
+        filename: 'login.html',
+        template: path.resolve('./src/server/templates/', 'login.pug'),
+        inject: false
+    }),
+    new HtmlWebpackPlugin({
+        filename: 'register.html',
+        template: path.resolve('./src/server/templates/', 'register.pug'),
+        inject: false
+    })
+],
 }
