@@ -1,0 +1,124 @@
+.html {
+    height: 100%;
+}
+
+.body {
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    --white-smoke: rgb(245, 245, 245);
+    --gainsboro: rgb(220, 220, 200);
+    --persian-green: rgb(0, 150, 136);
+}
+
+.h1 {
+    color: var(--persian-green);
+    margin-bottom: 20px;
+    word-spacing: 5px;
+}
+
+.h3 {
+    color: white;
+    font-size: 1.1rem;
+    word-spacing: 5px;
+    letter-spacing: 2px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--white-smoke);
+}
+
+.wrapper {
+    display: flex;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.img__wrapper {
+    display: flex;
+    border-radius: 10px 0px 0px 10px;
+    padding: 30px;
+}
+
+.img {
+    width: 250px;
+    padding: 10px;
+}
+
+.form {
+    max-width: 250px;
+}
+
+.form__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 250px;
+    min-height: 350px;
+    padding: 50px 30px;
+    border-radius: 0px 10px 10px 0px;
+    background-color: var(--persian-green);
+}
+
+.form__input {
+    width: 100%;
+    padding: 10px 0px 5px 0px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    background: none;
+    border: none;
+    border-bottom: 1px solid white;
+    font-family: 'Lato';
+    font-size: .9rem;
+    color: white;
+}
+
+.form__input::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.form__input:focus,
+.form__button:focus {
+    outline: none;
+}
+
+.form__input:focus {
+    border-bottom: 1px solid black;
+}
+
+.form__button {
+    width: 100%;
+    margin: 10px 0px;
+    padding: 10px;
+    border: 0;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    background-color: var(--white-smoke);
+    color: var(--persian-green);
+}
+
+.form__button:hover {
+    background-color: black;
+    color: white;
+}
+
+.form__text {
+    font-size: .8rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+}
+
+.form__link {
+    color: white;
+}
+
+.form__link:hover {
+    text-decoration: none;
+}
