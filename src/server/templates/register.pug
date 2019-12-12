@@ -15,12 +15,12 @@ html(lang='en')
           img.img(src='./graphic.svg', alt='woman standing and marking tasks as done on a page')
         .form__wrapper
           h3.h3 SIGN UP
-          form.form(action='/register', method='post')
-            input#username.form__input(type='text', name='user_name', placeholder='Username', required='')
-            input#password.form__input(type='password', name='user_email', placeholder='Password', required='')
-            input#password_repeated.form__input(type='password', name='user_email', placeholder='Confirm password', required='')
+          form.form(action='/auth/register', method='post')
+            input#username.form__input(type='text', name='username', placeholder='Username*', minlength='6', maxlength='255', required='')
+            input#email.form__input(type='email', name='email', placeholder='E-mail*', minlength='6', maxlength='50', required='')
+            input#password.form__input(type='password', name='password', placeholder='Password*', minlength='6', maxlength='255', required='')
             button.form__button(type='submit') Create account
             p.form__text
               | Already registered? 
-              a.form__link(href='#') Sign in
+              a.form__link(href='/login') Sign in
       script(scr='./index.js').

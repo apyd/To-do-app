@@ -12,14 +12,14 @@ html(lang='en')
       h1.h1 Todo application
       .wrapper
         .img__wrapper
-          img.img(src='public/graphic.svg', alt='woman standing and marking tasks as done on huge page')
+          img.img(src='./graphic.svg', alt='woman standing and marking tasks as done on huge page')
         .form__wrapper
           h3.h3 SIGN IN
-          form.form(action='/login', method='post')
-            input#username.form__input(type='text', name='user_name', placeholder='Username', required='')
-            input#password.form__input(type='password', name='user_email', placeholder='Password', required='')
+          form.form(action='/auth/login', method='post')
+            input#username.form__input(type='text', name='username', placeholder='Username', minlength='6', maxlength='255', required='')
+            input#password.form__input(type='password', name='password', placeholder='Password', minlength='6', maxlength='255', required='')
             button.form__button(type='submit') Sign in
             p.form__text
               | Not registered?
-              a.form__link(href='#') Create an account
+              a.form__link(href='/register') Create an account
       script(scr='./index.js').
