@@ -15,11 +15,11 @@ html(lang='en')
           img.img(src='./graphic.svg', alt='woman standing and marking tasks as done on huge page')
         .form__wrapper
           h3.h3 SIGN IN
-          form.form(action='/auth/login', method='post')
-            input#username.form__input(type='text', name='username', placeholder='Username', minlength='6', maxlength='255', required='')
-            input#password.form__input(type='password', name='password', placeholder='Password', minlength='6', maxlength='255', required='')
-            button.form__button(type='submit') Sign in
+          form#login__form.form
+            input#login__input--username.form__input(type='text', name='username', placeholder='Username', minlength='6', maxlength='255', required='')
+            input#login__input--password.form__input(type='password', name='password', placeholder='Password', minlength='6', maxlength='255', required='')
+            button#login__button.form__button(type='button' onclick='login()') Log in
             p.form__text
               | Not registered?
               a.form__link(href='/register') Create an account
-      script(scr='./index.js').
+      script(src='./index.js').
