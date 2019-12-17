@@ -45,7 +45,7 @@ api.post('/tasks', verifyToken, async (req, res) => {
 
 api.put('/tasks/:id', verifyToken, async (req, res) => {
     try {
-        const updatedTask = await Task.findOneAndUpdate({_id: req.params.id}, {$set:{title: req.body.title, done: req.body.done}});
+        const updatedTask = await Task.findOneAndUpdate({_id: req.params.id}, {$set:{done: req.body.done}});
         await updatedTask.save();
         res.status(200).send(updatedTask).json();
     } catch (err) {
