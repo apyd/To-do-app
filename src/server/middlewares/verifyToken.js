@@ -9,7 +9,7 @@ function verifyToken(req, res, next) {
         req.user = verified;
         return next();
     } catch (err) {
-        res.send(401).send(err.message);
+        res.sendStatus(401).send(err.message);
     }
 }
 
