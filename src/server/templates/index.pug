@@ -9,17 +9,16 @@ html
     link(rel="stylesheet" href="style.css")
   body.body
     main.main
-      .app-wrapper
-        .another-wrapper
-          form.form__logout(action='auth/logout', method='GET')
-            button.button__logout(type="submit") Log out
-          h1.h1 Your todos
-          .input__wrapper
-            input.task__input--add(type="text" minlength="3" maxlength="55" placeholder="What are you planning to do?" required="")
-            button.task__button--add(type="button") Add task
-          .buttons__wrapper
-            button.filter__button.filter__button--all(type="button") All
-            button.filter__button.filter__button--todo(type="button") To do
-            button.filter__button.filter__button--done(type="button") Done
-          ul.tasks-list
+      .dashboard-wrapper
+        form.form--logout(action='auth/logout', method='GET')
+          button.button.form__button--logout(type="submit") Log out
+        h1.h1 Your todos
+        .input__wrapper
+          input.form.task__input--add(type="text" minlength="3" maxlength="55" placeholder="What are you planning to do?" required="")
+          button.button.task__button--add(type="button") Add task
+        .buttons__wrapper
+          button.button.filter__button(type="button") All
+          button.button.filter__button(type="button") To do
+          button.button.filter__button(type="button") Done
+        ul.tasks-list
     script(src="index.js")
