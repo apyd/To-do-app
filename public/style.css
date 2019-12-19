@@ -228,6 +228,10 @@
     border-radius: 5px;
 }
 
+.task--done {
+    background-color: grey;
+}
+
 .task-checkbox {
     -webkit-appearance: none;
 	appearance: none;
