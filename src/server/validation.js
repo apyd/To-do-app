@@ -20,7 +20,8 @@ const validateLogin = (data) => {
 const validateTask = (data) => {
     const schema = Joi.object({
         title: Joi.string().min(3).max(255).required(),
-        done: Joi.boolean()
+        done: Joi.boolean(),
+        owner: Joi.string()
     });
     return schema.validate(data);
 };
