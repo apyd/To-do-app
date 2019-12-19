@@ -35,7 +35,7 @@ function addTask() {
     if (!addTaskInput.value || addTaskInput.value.length < 3) return;
     const newTask = {
         title: addTaskInput.value,
-        done: false
+        done: false,
     }
     saveTask(newTask);
     clearListOfTasks();
@@ -49,7 +49,6 @@ function clearListOfTasks() {
 
 function saveTask(newTask) {
     const url = 'http://localhost:3000/api/tasks';
-    const authKey = window.localStorage.getItem('x-auth-token');
     let data = {
         title: newTask.title,
         done: newTask.done
@@ -59,13 +58,11 @@ function saveTask(newTask) {
         body: JSON.stringify(data),
         headers: {
             'Content-Type': 'application/json',
-            'x-auth-token': authKey,
         }
     }
     fetch(url, fetchData)
         .then(dataWrappedByPromise => dataWrappedByPromise.text())
-        .then(token => {
-            window.localStorage.getItem('x-auth-token', token);
+        .then(token => { console.log('saveTask')
         })
         .catch(err => console.log(err.message));
 }
@@ -75,56 +72,12 @@ function removeTask() {
     console.log('task removed');
 }
 
-function register() {
-    const url = 'http://localhost:3000/auth/register';
-    let data = {
-        username: registerUsername.value,
-        email: registerEmail.value,
-        password: registerPassword.value
-    }
-    let fetchData = {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    }
-    fetch(url, fetchData)
-        .then(dataWrappedByPromise => dataWrappedByPromise.json())
-        .then(data => {
-            console.log(data)
-        })
-        .catch(err => console.log(err))
-}
-
-function login() {
-    const url = 'http://localhost:3000/auth/login';
-    let data = {
-        username: loginUsername.value,
-        password: loginPassword.value
-    }
-    let fetchData = {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    }
-    fetch(url, fetchData)
-        .then(dataWrappedByPromise => dataWrappedByPromise.text())
-        .then(token => {
-            window.localStorage.setItem('x-auth-token', token);
-        })
-        .catch(err => console.log(err.message));
-}
 
 function getTasks() {
     const url = 'http://localhost:3000/api/tasks';
-    const authKey = window.localStorage.getItem('x-auth-token');
     let fetchData = {
         method: 'GET',
         headers: {
-            'x-auth-token': authKey,
             'Content-Type': 'application/json'
         }
     }
@@ -141,7 +94,7 @@ function generateTask(taskToGenerate) {
     let span = document.createElement('span');
     let button = document.createElement('button');
     let task = document.createElement('li');
-    task.className = 'task';
+    (taskToGenerate.done === true) ? task.className = 'task task--done' : task.className = 'task';
     task.dataset.key = taskToGenerate._id;
     checkbox.type = 'checkbox';
     checkbox.className = 'task-checkbox';
@@ -159,16 +112,8 @@ function generateTask(taskToGenerate) {
 }
 
 function updateTask(e) {
-    // if (this.checked) {
-    //     this.parentElement.style.backgroundColor = 'grey';
-    //     console.log('done');
-    // } else {
-    //     e.target.parentElement.style.backgroundColor = 'rgb(0, 150, 136)';
-    //     console.log('undone');
-    // }
     const taskToUpdate = e.srcElement;
     const url = `http://localhost:3000/api/tasks/${taskToUpdate.parentElement.dataset.key}`;
-    const authKey = window.localStorage.getItem('x-auth-token');
     console.log(e.target.checked);
     let data = {
         done: e.target.checked
@@ -177,7 +122,6 @@ function updateTask(e) {
         method: 'PUT',
         body: JSON.stringify(data),
         headers: {
-            'x-auth-token': authKey,
             'Content-Type': 'application/json'
         }
     }
@@ -195,11 +139,9 @@ function updateTask(e) {
 function deleteTask(e) {
     const taskToDelete = e.srcElement;
     const url = `http://localhost:3000/api/tasks/${taskToDelete.parentElement.dataset.key}`;
-    const authKey = window.localStorage.getItem('x-auth-token');
     let fetchData = {
         method: 'DELETE',
         headers: {
-            'x-auth-token': authKey,
             'Content-Type': 'application/json'
         }
     }
