@@ -37,12 +37,10 @@
 .app-wrapper {
     background-color: white;
     height: 100%;
-    /* margin: 50px; */
     display: flex;
     flex-direction: column;
     align-self: stretch;
     align-items: center;
-    /* justify-content: center; */
 }
 
 .wrapper {
@@ -151,8 +149,10 @@
 }
 
 .another-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
     width: 350px;
-    margin-bottom: 10px;
 }
 
 .input__wrapper {
@@ -212,7 +212,6 @@
     overflow:hidden; 
     overflow-y:auto;
     min-height: 10vh;
-    max-height:40vh;
     margin-bottom: 10px;
 }
 
@@ -269,7 +268,7 @@
 
 .button__logout {
     width: 25%;
-    margin: 10px 0px;
+    margin-top: 10px;
     padding: 10px;
     border: 0;
     border-radius: 5px;
@@ -292,7 +291,6 @@
 
 .filter__button {
     width: 30%;
-    margin: 10px 0px;
     padding: 10px;
     border: 0;
     border-radius: 5px;
@@ -308,10 +306,6 @@
 }
 
 @media (max-width: 700px) {
-    .app-wrapper {
-        margin: 10px;
-    }
-    
     .img__wrapper {
         display: none;
     }
