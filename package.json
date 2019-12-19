@@ -1,10 +1,14 @@
 {
   "name": "to-do-app",
   "version": "1.0.0",
+  "engines": {
+    "node": "10.16.3"
+  },
   "description": "To do application",
   "main": "src/server/index.js",
   "scripts": {
-    "client": "webpack-dev-server --config webpack.dev.js --open",
+    "start": "node server.js",
+    "client": "webpack-dev-server --config webpack.dev.js --open --watch",
     "server": "nodemon src/server/app.js",
     "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
     "build": "webpack --config webpack.prod.js && node src/server/app.js"
