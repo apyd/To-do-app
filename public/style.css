@@ -272,3 +272,10 @@
         border-radius: 10px;
     }
  }
+
+ @media (max-height: 560px) {
+    .form__wrapper {
+        height: 250px;
+        padding: 30px;
+    }
+ }
