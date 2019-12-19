@@ -11,11 +11,15 @@ html
     main.main
       .app-wrapper
         .another-wrapper
-          form#login__form.form(action='auth/logout', method='GET')
-            button.logout(type="submit") Logout
+          form.form__logout(action='auth/logout', method='GET')
+            button.button__logout(type="submit") Log out
           h1.h1 Your todos
           .input__wrapper
             input.task__input--add(type="text" minlength="3" maxlength="55" placeholder="What are you planning to do?" required="")
             button.task__button--add(type="button") Add task
+          .buttons__wrapper
+            button.filter__button.filter__button--all(type="button") All
+            button.filter__button.filter__button--todo(type="button") To do
+            button.filter__button.filter__button--done(type="button") Done
           ul.tasks-list
     script(src="index.js")
