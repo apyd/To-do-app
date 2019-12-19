@@ -2,13 +2,13 @@ const express = require('express');
 const router = express.Router();
 const verifyToken = require('../middlewares/verifyToken');
 
-// router.get('/', verifyToken, (req, res) => {
-//     try {
-//         res.render('index');
-//     } catch (err) {
-//         res.send(err.message);
-//     }
-// });
+router.get('/', verifyToken, (req, res) => {
+    try {
+        res.render('index');
+    } catch (err) {
+        res.redirect('/login');
+    }
+});
 
 router.get('/login', (req, res) => {
     try {

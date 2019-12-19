@@ -6,7 +6,7 @@ const verifyToken = require('../middlewares/verifyToken');
 
 api.get('/tasks', verifyToken, async (req, res) => {
     try {
-        const tasks = await Task.find();
+        const tasks = await Task.find({'owner' : process.env.USER_ID});
         res.status(200).send(tasks);
     } catch (err) {
         res.status(400).send(err.message).json();
@@ -32,7 +32,7 @@ api.post('/tasks', verifyToken, async (req, res) => {
     const task = new Task ({
         title: req.body.title,
         done: req.body.done,
-        
+        owner: process.env.USER_ID
     });
     try {
     await task.save();
