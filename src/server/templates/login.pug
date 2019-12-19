@@ -10,7 +10,7 @@ html(lang='en')
   body.body
     main.main
       h1.h1 Todo application
-      .wrapper
+      .content__wrapper
         .img__wrapper
           img.img(src='./graphic.svg', alt='woman standing and marking tasks as done on huge page')
         .form__wrapper
@@ -18,7 +18,7 @@ html(lang='en')
           form#login__form.form(action='auth/login', method='POST')
             input#login__input--username.form__input(type='text', name='username', placeholder='Username', minlength='6', maxlength='255', required='')
             input#login__input--password.form__input(type='password', name='password', placeholder='Password', minlength='6', maxlength='255', required='')
-            button#login__button.form__button(type='submit') Log in
+            button#login__button.button.form__button(type='submit') Log in
             p.form__text
               | Not registered?
               a.form__link(href='/register') Create an account

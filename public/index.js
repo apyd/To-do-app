@@ -104,7 +104,7 @@ function generateTask(taskToGenerate) {
     span.className = 'task-title';
     span.innerHTML = taskToGenerate.title;
     task.appendChild(span);
-    button.className = 'task__button--remove';
+    button.className = 'button task__button--remove';
     button.innerHTML = 'Delete';
     button.addEventListener('click', deleteTask);
     task.appendChild(button);
