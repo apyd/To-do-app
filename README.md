@@ -2,6 +2,12 @@
 
 Todo application prepared as 4th project in Coderscamp bootcamp.
 
+![alt text](https://images.tinypic.pl/i/00994/c3cm705771jf.png "Register panel")
+
+![alt text](https://images.tinypic.pl/i/00994/qhhesa1qz4ng.png "Login panel")
+
+![alt text](https://images.tinypic.pl/i/00994/szzcfif5nzou.png "Dashboard")
+
 ## Project aim
 
 Project aim was to prepare backend and frontend for todo application that allows to add tasks, mark them as done/undone or to remove tasks from list. Dashboard is accessible only for logged users - beside dashboard application has also register and login view which allow user to create new account and then log in.
@@ -47,8 +53,3 @@ POST /api/tasks - To add new task. In request body please provide at least 'titl
 PUT /api/tasks/:id - to update particular task. In request body please provide at least 'title' - it is also allowed to send 'done' status so updated task can be marked as done/undone after update.
 
 DELETE /api/tasks:id - to remove task
-
-
-## Demo
-
-Application demo is available under following URL: https://apyd.github.io/Giphy-project/docs
