@@ -24,10 +24,14 @@ Project is adapted to work only with mongoDB.
 
 Application use environment variables as following:
 
-DB_CONNECT = 
+DB_CONNECT =
+
 PORT = 
-SECRET_KEY = 
+
+SECRET_KEY =
+
 TOKEN = 
+
 USER_ID = 
 
 Only DB_CONNECT, PORT and SECRET_KEY are needed to be defined for application running.
